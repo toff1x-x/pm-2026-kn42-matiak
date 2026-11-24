@@ -18,11 +18,11 @@ def simulate(velocity, remaining, runs=10000, seed=42):
         while left > 0:
             left -= random.choice(velocity)
             sprints += 1
-            if sprints > 200:      # захист від нульової velocity
+            if sprints > 200:      
                 break
         results.append(sprints)
     results.sort()
-    def pct(p):                    # найменше N, до якого вкладається p% прогонів
+    def pct(p):                    
         return math.ceil(results[math.ceil(p * runs) - 1])
     return pct(0.50), pct(0.85)
 
